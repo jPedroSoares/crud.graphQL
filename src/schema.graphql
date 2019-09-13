@@ -1,0 +1,18 @@
+# Listar todos os Usuários
+type Query {
+    id: ID!
+    listUsers(id: ID): [User!]!
+}
+
+type User {
+    id: ID!
+    nome: String!
+    idade: Int!
+    altura: Float!
+}
+
+type Mutation {
+    post(nome: String!, idade: Int!, altura: Float!) : User!
+    update(id: ID!,nome: String!, idade: Int!, altura: Float!) : User!
+    delete(id: ID!) : String
+}
