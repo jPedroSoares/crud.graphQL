@@ -1,0 +1,7 @@
+type User {
+    id: ID! @id
+    createdAt: DateTime! @createdAt
+    name: String! 
+    age: Int!
+    height: Float!
+}

@@ -1,4 +1,5 @@
-# Listar todos os Usuários
+#Defining Schemas
+
 type Query {
     id: ID!
     listUsers(id: ID): [User!]!
@@ -6,13 +7,19 @@ type Query {
 
 type User {
     id: ID!
-    nome: String!
-    idade: Int!
-    altura: Float!
+    name: String!
+    age: Int!
+    height: Float!
 }
 
 type Mutation {
-    post(nome: String!, idade: Int!, altura: Float!) : User!
-    update(id: ID!,nome: String!, idade: Int!, altura: Float!) : User!
-    delete(id: ID!) : String
+    post(name: String!, age: Int!, height: Float!) : User!
+    update(id: ID!,name: String!, age: Int!, height: Float!) : User!
+    deleted(id: ID!) : User
+}
+
+type Subscription {
+    newUser: User
+    updateUser: User
+    deleteUser: String
 }
